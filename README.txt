@@ -1,8 +1,14 @@
-- Name: Hieu Phan
-- Favorite ice-cream flavor: Pineapple Coconut
-- Collaborator: None
-- The algorithm works well and is able to output correct answer on tested cases. However, the more blank spaces there
-is, the longer it takes the algorithm to runs. This is reasonable because as there are more blank spaces to fill, there
-are more possible states (branch factor of 5), thus it takes the algorithm longer to reach the leaves of the tree to
-compute the mini-max. This can be improved such as by implementing alpha-beta pruning.
-- The command to run is: python connect3.py input_file
+For this project, I implemented an AI solver for Connect-3, which is a variant of Connect-4 on a 4x5 board, using the Mini-Max function to calculate the maximum utility recursively at each state. The program takes a state as a .txt file input and outputs the optimal move for the player-to-move at the given state with the expected utility for player X (ie. 1 if X wins, 0 if two players draw, and -1 if player O wins). If there are multiple moves with the same utility, it will output the first one. 
+Example input: 
+
+O.O..
+OXOX.
+XOXOX
+XOXOX
+
+Example output: 
+1 X4
+(which means: it's player X's turn, its best move is column 4 (right-most column), and the expected utility is 1 or player X is expected to win)
+Note:
+- Rows and columns are 0-indexed. 
+- The larger the number of empty spaces, the longer it takes for the program to run because of its recursive nature. 
